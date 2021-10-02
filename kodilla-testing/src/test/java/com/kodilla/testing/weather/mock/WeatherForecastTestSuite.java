@@ -37,16 +37,9 @@ public class WeatherForecastTestSuite {
     @Test
     void testCalculateForecastWithMock(){
         //Given
-//        Map<String,Double> temperaturesMap = new HashMap<>();
-//        temperaturesMap.put("Rzeszow", 25.0);
-//        temperaturesMap.put("Krakow", 26.0);
-//        temperaturesMap.put("Wroclaw", 24.0);
-//        temperaturesMap.put("Warszawa", 25.0);
-//        temperaturesMap.put("Gdansk", 25.0);
         when(temperaturesMock.getTemperatures()).thenReturn(temperaturesMap);
         WetherForecast weatherForecast = new WetherForecast(temperaturesMock);
         //When
-
         int quantityOfSensors = weatherForecast.calculateForecast().size();
         //Then
         Assertions.assertEquals(5,quantityOfSensors);
@@ -55,16 +48,9 @@ public class WeatherForecastTestSuite {
     @Test
     void testTemperaturesAvgWithMock(){
         //Given
-//        Map<String,Double> temperaturesMap = new HashMap<>();
-//        temperaturesMap.put("Rzeszow", 25.0);
-//        temperaturesMap.put("Krakow", 26.0);
-//        temperaturesMap.put("Wroclaw", 24.0);
-//        temperaturesMap.put("Warszawa", 25.0);
-//        temperaturesMap.put("Gdansk", 25.0);
         when(temperaturesMock.getTemperatures()).thenReturn(temperaturesMap);
         WetherForecast weatherForecast = new WetherForecast(temperaturesMock);
         //When
-
         double TemperatureAvg = weatherForecast.temperaturesAvg();
         //Then
         Assertions.assertEquals(25.0,TemperatureAvg);
@@ -73,17 +59,9 @@ public class WeatherForecastTestSuite {
     @Test
     void testTempMediane(){
         //Given
-//        Map<String,Double> temperaturesMap = new HashMap<>();
-//        temperaturesMap.put("Rzeszow", 5.0);
-//        temperaturesMap.put("Krakow", 2.0);
-//        temperaturesMap.put("Wroclaw", 4.0);
-//        temperaturesMap.put("Warszawa", 3.0);
-//        temperaturesMap.put("Gdansk", 1.0);
-//        temperaturesMap.put("Gdansk1", 6.0);
         when(temperaturesMock.getTemperatures()).thenReturn(temperaturesMap);
         WetherForecast weatherForecast = new WetherForecast(temperaturesMock);
         //When
-
         double TemperatureMed = weatherForecast.tepmeratureMedian();
         //Then
         Assertions.assertEquals(25.0,TemperatureMed);
