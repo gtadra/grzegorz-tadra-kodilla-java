@@ -9,10 +9,10 @@ public class ArrayOperationTestSuite {
     void testGetAverage() {
         //Given
         int[] intArray = {6, 6, 2, 2};
-        ArrayOperationClass arrayOperations = new ArrayOperationClass();
+ //       ArrayOperationClass arrayOperations = new ArrayOperationClass();
 
         //When
-        double result = arrayOperations.getAverageFn(intArray);
+        double result = ArrayOperations.getAverageFn(intArray);
 
         //Then
         assertEquals(4.0, result);

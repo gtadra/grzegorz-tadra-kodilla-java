@@ -10,7 +10,6 @@ import static org.junit.jupiter.api.Assertions.*;
 import java.time.Duration;
 import java.util.List;
 import java.time.LocalDate;
-import java.util.OptionalDouble;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
@@ -87,11 +86,11 @@ public class BoardTestSuite {
                 .map(l -> Duration.between(LocalDate.now().atStartOfDay(), l.getCreated().atStartOfDay()).toDays())
                         .collect(Collectors.toList());
 
-        Double avgDaysForTask = IntStream.range(0,listOfDays.size())
+        Double avgDaysForTask = Math.abs(IntStream.range(0,listOfDays.size())
                 .mapToDouble(n -> listOfDays.get(n))
-                .average().getAsDouble();
+                .average().getAsDouble());
 
-        assertEquals(-10, avgDaysForTask);
+        assertEquals(10, avgDaysForTask);
     }
 
 

@@ -6,7 +6,14 @@ import java.util.stream.IntStream;
 
 public interface ArrayOperations {
 
-     default double getAverageFn(int[] numbers) {
-    return 0.0;
+    public static double getAverageFn(int[] numbers) {
+        Arrays.stream(numbers)
+                .forEach(System.out::println);
+
+        Double result = IntStream.range(0, numbers.length)
+                .mapToDouble(n -> numbers[n])
+                .average().getAsDouble();
+
+        return result;
     }
 }
