@@ -6,7 +6,7 @@ public class Application {
         OrderRequesrRetriver orderRequesrRetriver = new OrderRequesrRetriver();
         OrderRequest orderRequest = orderRequesrRetriver.retrive();
 
-        OrderProcess orderProcess = new OrderProcess(new PlaceInternalOrder(), new SendOrderToSupp01());
+        OrderProcess orderProcess = new OrderProcess(new PlaceInternalOrder(), new ExtraFoodShop());
         orderProcess.process(orderRequest);
     }
 }
