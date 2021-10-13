@@ -14,7 +14,17 @@ public class Application {
         flights.addFlight( new SingleFlight("WRO", "ZGA"));
         flights.addFlight( new SingleFlight("ZGA", "WRO"));
 
-        flights.findFlight("WAR", "WRO");
-    }
 
+        System.out.println("\n ---=== All flights fom selected destination ===---");
+        flights.findAllFlightsFrom("WRO");
+
+        System.out.println("\n ---=== All flights to selected destination ===---");
+        flights.findAllFlightsTo("WRO");
+
+        System.out.println("\n ---=== All possible flights from one destination to another ===---");
+        flights.findAllPossibleFlights("WAR", "WRO");
+
+        System.out.println("\n ---=== Flight via connecting Airport ===---");
+        flights.findConnectedFlight("WAR","ZGA", "WRO");
+    }
 }
