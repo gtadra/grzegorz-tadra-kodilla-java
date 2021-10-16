@@ -12,7 +12,7 @@ public class FindFlight{
         flighMap.put("WRO", true);
 try {
     for (Map.Entry<String, Boolean> airport : flighMap.entrySet()) {
-        if (airport.getKey() == flight.getArrivalAirport()) {
+        if (airport.getKey().equals(flight.getArrivalAirport())) {
             System.out.println("Airport found: " + airport.getKey() + "; possible to use: " + airport.getValue());
         }
     }
