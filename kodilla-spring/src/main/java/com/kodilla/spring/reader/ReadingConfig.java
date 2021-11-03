@@ -27,7 +27,7 @@ public class ReadingConfig {
 
     @Bean(name = "book2")
     @Scope("prototype")
-   // @Conditional(IfDayIsOddCondition.class)
+    @Conditional(IfDayIsOddCondition.class)
     public Book getBookTwo(){
         return new Book("The book number tow");
     }
