@@ -14,33 +14,42 @@ public class CalculatorTestSuite {
     @Test
     void addTest(){
         //Given
+        double result;
         //When
-        calculator.add(4,4);
+        result = calculator.add(4,4);
         //Then
+        assertEquals(8,result);
+
     }
 
     @Test
     void subTest(){
         //Given
+        double result;
         //When
-        calculator.sub(4,4);
+        result = calculator.sub(4,4);
         //Then
+        assertEquals(0,result);
     }
 
     @Test
     void mulTest(){
         //Given
+        double result;
         //When
-        calculator.mul(4,4);
+        result = calculator.mul(4,4);
         //Then
+        assertEquals(16,result);
     }
 
     @Test
     void divTest(){
         //Given
+        double result;
         //When
-        calculator.div(4,4);
+        result = calculator.div(4,4);
         //Then
+        assertEquals(1,result);
     }
 
 }
