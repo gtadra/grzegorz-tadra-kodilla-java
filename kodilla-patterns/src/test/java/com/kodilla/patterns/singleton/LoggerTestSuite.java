@@ -1,7 +1,7 @@
 package com.kodilla.patterns.singleton;
 
 import org.junit.jupiter.api.Test;
-import singleton.Logger;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 public class LoggerTestSuite {
