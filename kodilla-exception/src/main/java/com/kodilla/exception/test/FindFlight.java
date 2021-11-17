@@ -10,14 +10,14 @@ public class FindFlight{
         flighMap.put("POZ", true);
         flighMap.put("WAW", true);
         flighMap.put("WRO", true);
-try {
-    for (Map.Entry<String, Boolean> airport : flighMap.entrySet()) {
-        if (airport.getKey().equals(flight.getArrivalAirport())) {
-            System.out.println("Airport found: " + airport.getKey() + "; possible to use: " + airport.getValue());
+        try {
+            for (Map.Entry<String, Boolean> airport : flighMap.entrySet()) {
+                if (airport.getKey().equals(flight.getArrivalAirport())) {
+                    System.out.println("Airport found: " + airport.getKey() + "; possible to use: " + airport.getValue());
+                }
+            }
+        }catch (Exception e) {
+            throw new RouteNotFoundException();
         }
     }
-}catch (Exception e) {
-    throw new RouteNotFoundException();
-}
-}
 }
