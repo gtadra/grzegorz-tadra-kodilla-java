@@ -73,7 +73,7 @@ public class BookDirectoryTestSuite {
     @Test
     void testListBooksWithConditionFragmentShorterTehn3(){
     // Given
-        LibraryDatabase libraryDatabaseMock = mock(LibraryDatabase.class); //TODO (PYTANIE) po co tu tworzymy go na nowo skoro jest globalny "libraryDatabaseMock"
+        LibraryDatabase libraryDatabaseMock = mock(LibraryDatabase.class);
         BookLibrary bookLibrary = new BookLibrary(libraryDatabaseMock);
     //When
         List<Book> theListOfBooks10 = bookLibrary.listBooksWithCondition("An");
