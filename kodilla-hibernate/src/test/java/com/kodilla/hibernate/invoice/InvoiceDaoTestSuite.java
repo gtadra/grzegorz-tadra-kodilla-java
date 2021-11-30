@@ -25,18 +25,16 @@ public class InvoiceDaoTestSuite  {
         //Given
          Product product1 = new Product("Product 1");
          Product product2 = new Product("Product 2");
-         productDao.save(product1);
-         productDao.save(product2);
          Item item1 = new Item(product1, new BigDecimal(2.5), 10);
          Item item2 = new Item(product1, new BigDecimal(1.5), 3);
          Item item3 = new Item(product2, new BigDecimal(1.55), 5);
          Item item4 = new Item(product2, new BigDecimal(2.25), 7);
          Item item5 = new Item(product1, new BigDecimal(20.5), 12);
-        product1.getItems().add(item1); //TODO - czy to jest konieczne? nie zrobi sie automatycznie?
-        product1.getItems().add(item2);
-        product1.getItems().add(item5);
-        product2.getItems().add(item3);
-        product2.getItems().add(item4);
+//        product1.getItems().add(item1);
+//        product1.getItems().add(item2);
+//        product1.getItems().add(item5);
+//        product2.getItems().add(item3);
+//        product2.getItems().add(item4);
          List<Item> items = new ArrayList<>();
          items.add(item1);
          items.add(item2);
@@ -44,26 +42,22 @@ public class InvoiceDaoTestSuite  {
          items.add(item4);
          items.add(item5);
          Invoice invoice = new Invoice("1", items);
-         item1.setInvoice(invoice);
-         item2.setInvoice(invoice);
-         item3.setInvoice(invoice);
-         item4.setInvoice(invoice);
-         item5.setInvoice(invoice);
+//         item1.setInvoice(invoice);
+//         item2.setInvoice(invoice);
+//         item3.setInvoice(invoice);
+//         item4.setInvoice(invoice);
+//         item5.setInvoice(invoice);
 
          //When
         invoiceDeo.save(invoice);
         int invoiceId = invoice.getId();
-        int product1Id = product1.getId();
-        int product2Id = product2.getId();
-        System.out.println(invoiceId + " " + product1Id + " " + product2Id);
 
         //Then
         assertNotEquals(0, invoiceId);
 
         //CleanUp
         invoiceDeo.deleteById(invoiceId);
-        productDao.deleteById(product1Id);
-        productDao.deleteById(product2Id);
+
 
 
 

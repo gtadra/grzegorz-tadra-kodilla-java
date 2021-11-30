@@ -59,14 +59,20 @@ public class ItemProductDaoTestSuite {
         product1.getItems().add(item5);
         product2.getItems().add(item3);
         product2.getItems().add(item4);
+//
+//        item1.setProduct(product1);
+//        item2.setProduct(product1);
+//        item3.setProduct(product2);
+//        item4.setProduct(product2);
+//        item5.setProduct(product1);
 
 
         //When
+ //       productDao.save(product1);
+//        product1.getItems().remove(item1);
         productDao.save(product1);
-        product1.getItems().remove(item1);
-        productDao.save(product1); //TODO Czemu baza sie nie odswierza? tzn. czemu item1 nie jest usówany?
-//        productDao.save(product2);
-        itemDao.save(item1);
+        productDao.save(product2);
+//        itemDao.save(item1);
 //        itemDao.save(item2);
 //        itemDao.save(item3);
 //        itemDao.save(item4);
