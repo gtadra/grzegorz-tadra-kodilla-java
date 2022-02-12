@@ -114,9 +114,9 @@ public class CompanyDaoTestSuite {
         try {
             companyDao.deleteById(softwareMachineId);
             companyDao.deleteById(dataMaestersId);
-            companyDao.deleteById(greyMatterId);
+           companyDao.deleteById(greyMatterId);
         } catch (Exception e) {
-            //do nothing
+           //do nothing
         }
     }
 

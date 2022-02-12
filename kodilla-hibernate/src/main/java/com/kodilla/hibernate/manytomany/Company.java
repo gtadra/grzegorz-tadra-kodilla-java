@@ -12,6 +12,13 @@ import java.util.List;
         resultClass = Company.class
 )
 
+@NamedNativeQuery(
+        name = "Company.findCompanyBasedOnNamePart",
+        query = "SELECT * FROM COMPANIES " +
+                "WHERE COMPANY_NAME LIKE :NAMEPART",
+        resultClass = Company.class
+)
+
 @Entity
 @Table(name = "COMPANIES")
 public class Company {
