@@ -14,7 +14,7 @@ import java.util.List;
 
 @NamedNativeQuery(
         name = "Company.findCompanyBasedOnNamePart",
-        query = "SELECT * FROM COMPANIES " +
+        query = "SELECT DISTINCT * FROM COMPANIES " +
                 "WHERE COMPANY_NAME LIKE :NAMEPART",
         resultClass = Company.class
 )

@@ -10,7 +10,10 @@ import org.junit.jupiter.api.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import java.util.ArrayList;
 import java.util.List;
+
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
 
 @SpringBootTest
 public class SearchFacadeTestSuit {
@@ -28,6 +31,7 @@ public class SearchFacadeTestSuit {
 
     @BeforeEach
     void AddDateForTests() {
+        System.out.println("CREATE DATA");
         Employee johnSmith = new Employee("John", "Smith");
         Employee stephanieClarckson = new Employee("Stephanie", "Clarckson");
         Employee lindaKovalsky = new Employee("Linda", "Kovalsky");
@@ -65,7 +69,7 @@ public class SearchFacadeTestSuit {
             companyDao.deleteById(dataMaestersId);
             companyDao.deleteById(greyMatterId);
             companyDao.deleteAll();
-            employeeDao.deleteAll();
+            System.out.println("DELETED");
         } catch (Exception e) {
             //do nothing
         }
@@ -73,24 +77,32 @@ public class SearchFacadeTestSuit {
 
 
 
-
     @Test
     void testFindCompanyBasedOnNamePart() {
+        //Given
+        List<String> result = new ArrayList<>();
+        //When
         try {
-          searchFacade.findCompanyBasedOnNamePart("Ma").forEach(n -> System.out.println(n));
+        result = searchFacade.findCompanyBasedOnNamePart("Mac");
         } catch (SearchExceptation e) {
             System.out.println(e.getMessage());
         }
-
+        //Then
+        assertNotEquals(0, result.size());
     }
 
     @Test
     void testFindEmployeeBasedOnNamePart() {
+        //Given
+        List<String> result = new ArrayList<>();
+        //When
         try {
-            searchFacade.findEmployeeBasedOnNamePart("i").forEach(n -> System.out.println(n));
+        result = searchFacade.findEmployeeBasedOnNamePart("mi");
         } catch (SearchExceptation e) {
             System.out.println(e.getMessage());
         }
+        //Then
+        assertNotEquals(0, result.size());
     }
 
 }

@@ -14,7 +14,7 @@ import java.util.List;
 
 @NamedNativeQuery(
         name = "Employee.findEmployeeBasedOnNamePart",
-        query = "SELECT * FROM EMPLOYEES " +
+        query = "SELECT DISTINCT * FROM EMPLOYEES " +
                 "WHERE FIRSTNAME LIKE :NAMEPART OR LASTNAME LIKE :NAMEPART",
         resultClass = Employee.class
 )

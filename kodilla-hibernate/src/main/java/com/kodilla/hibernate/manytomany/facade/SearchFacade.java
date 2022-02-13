@@ -23,7 +23,7 @@ public class SearchFacade {
     }
 
 
-    public List<String> findCompanyBasedOnNamePart (String partName) throws SearchExceptation{
+    public List<String> findCompanyBasedOnNamePart(String partName) throws SearchExceptation{
         LOGGER.info("Searching for company with '" + partName + "' in name");
 
         List<String> result =  companyDao.findCompanyBasedOnNamePart("%" + partName + "%").stream()
@@ -37,7 +37,7 @@ public class SearchFacade {
         return result;
     }
 
-    public List<String> findEmployeeBasedOnNamePart (String partName) throws SearchExceptation{
+    public List<String> findEmployeeBasedOnNamePart(String partName) throws SearchExceptation{
         LOGGER.info("Searching for employee with '" + partName + "' in name");
 
         List<String> result = employeeDao.findEmployeeBasedOnNamePart("%"+ partName +"%").stream()
