@@ -30,7 +30,7 @@ public class SearchFacadeTestSuit {
 
 
     @BeforeEach
-    void AddDateForTests() {
+    void addDateForTests() {
         System.out.println("CREATE DATA");
         Employee johnSmith = new Employee("John", "Smith");
         Employee stephanieClarckson = new Employee("Stephanie", "Clarckson");
@@ -62,7 +62,7 @@ public class SearchFacadeTestSuit {
     }
 
     @AfterEach
-    void DelateAllTestData() {
+    void delateAllTestData() {
         //CleanUp
         try {
             companyDao.deleteById(softwareMachineId);
